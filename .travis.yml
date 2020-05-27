@@ -23,7 +23,7 @@ script:
 
 after_success:
   - export UPLOADTOOL_SUFFIX=XZ
-  - export UPLOADTOOL_BODY="\\\"Experimental Z00T\\\"
+  - export UPLOADTOOL_BODY="Experimental Z00T"
   - sudo bash upload.sh $TRAVIS_BUILD_DIR/msm8916/*.zip
 
 branches:
