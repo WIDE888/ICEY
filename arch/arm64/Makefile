@@ -31,7 +31,7 @@ LD		+= -EL
 endif
 
 # msm8916_64 optimizations
-arch-$(CONFIG_ARCH_MSM8916)	:= $(call cc-option,-mcpu=cortex-a53.cortex-a53+crypto,-march=armv8-a+crypto)
+arch-$(CONFIG_ARCH_MSM8916)	:= $(call cc-option,-mcpu=cortex-a53.cortex-a53,-march=armv8-a)
 tune-$(CONFIG_ARCH_MSM8916)	:= -mfix-cortex-a53-835769 -mfix-cortex-a53-843419 -mtune=cortex-a53
 
 KBUILD_CFLAGS	+= $(arch-y) $(tune-y)
