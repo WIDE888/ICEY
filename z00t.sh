@@ -16,8 +16,8 @@ OUT="msm8916";
 FINAL_ZIP=$KERNEL_NAME-$VERSION-$DATE-$DEVICE.zip;
 
 # Dirs
-ANYKERNEL_DIR=$TRAVIS_BUILD_DIR/AnyKernel2;
-KERNEL_IMG=$TRAVIS_BUILD_DIR/arch/arm64/boot/Image.gz-dtb;
+ANYKERNEL_DIR=$TRAVIS_BUILD_DIR/AnyKernel3;
+KERNEL_IMG=$TRAVIS_BUILD_DIR/arch/arm/boot/Image.gz-dtb;
 UPLOAD_DIR=$TRAVIS_BUILD_DIR/$OUT;
 
 git clone https://github.com/AkagiShiroe/gcc-prebuilt-elf-toolchains.git -b master --single-branch --depth=1 -4 aarch64-linux-elf -j$(nproc --all);
@@ -38,8 +38,8 @@ find tmp_mod/ -name '*.ko' -type f -exec cp '{}' $ANYKERNEL_DIR/modules/system/l
 cp $KERNEL_IMG $ANYKERNEL_DIR;
 mkdir -p $UPLOAD_DIR;
 cd $ANYKERNEL_DIR;
-zip -r9 UPDATE-AnyKernel2.zip * -x README UPDATE-AnyKernel2.zip;
-mv $ANYKERNEL_DIR/UPDATE-AnyKernel2.zip $UPLOAD_DIR/$FINAL_ZIP;
+zip -r9 UPDATE-AnyKernel3.zip * -x README UPDATE-AnyKernel2.zip;
+mv $ANYKERNEL_DIR/UPDATE-AnyKernel3.zip $UPLOAD_DIR/$FINAL_ZIP;
 
 # Cleanup
 rm $ANYKERNEL_DIR/Image.gz-dtb;
