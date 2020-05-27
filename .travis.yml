@@ -1,0 +1,38 @@
+sudo: required
+language: cpp
+compiler: gcc
+dist: bionic
+
+before_install:
+  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+install: 
+  - sudo apt-get install -qq g++-10
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 90
+
+script: 
+  - wget https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - chmod +x ./gcc-fix.sh
+ # - chmod +x ./z00l.sh
+  - chmod +x ./z00t.sh
+  - sudo bash ./gcc-fix.sh
+  - sudo bash ./z00t.sh
+ # - sudo bash ./z00l.sh
+
+after_success:
+  - export UPLOADTOOL_SUFFIX=XZ
+  - export UPLOADTOOL_BODY="\\\"Experimental Z00T\\\"
+  - sudo bash upload.sh $TRAVIS_BUILD_DIR/msm8916/*.zip
+
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)$/
+
+cache:
+  - ccache
+
+group: travis_latest
+os: linux
