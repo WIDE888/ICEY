@@ -15,10 +15,10 @@ install:
 script: 
   - wget https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - chmod +x ./gcc-fix.sh
-  - chmod +x ./z00t.sh
+  - chmod +x ./Z00T.sh
  # - chmod +x ./z00l.sh
   - sudo bash ./gcc-fix.sh
-  - sudo bash ./z00t.sh
+  - sudo bash ./Z00T.sh
  # - sudo bash ./z00l.sh
 
 after_success:
