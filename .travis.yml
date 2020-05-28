@@ -15,6 +15,7 @@ install:
 script: 
   - wget https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - chmod +x ./gcc-fix.sh
+#  - sudo ln -s ./include/dt-bindings dt-bindings
   - chmod +x ./Z00T.sh
  # - chmod +x ./z00l.sh
   - sudo bash ./gcc-fix.sh
