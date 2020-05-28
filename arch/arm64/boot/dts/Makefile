@@ -1,12 +1,12 @@
-dtb-$(CONFIG_ARCH_VEXPRESS) += rtsm_ve-aemv8a.dtb foundation-v8.dtb
-dtb-$(CONFIG_ARCH_XGENE) += apm-mustang.dtb
-
 targets += dtbs
+targets += $(DTB_LIST)
 
 #used for cleaning - not building
 subdir- := qcom
 
-
+# *.dtb used to be generated in the directory above. Clean out the
+# old build results so people don't accidentally use them.
 dtbs: $(addprefix $(obj)/, $(DTB_LIST))
+	$(Q)rm -f $(obj)/../*.dtb
 
-clean-files := dts/*.dtb *.dtb
+clean-files := *.dtb
