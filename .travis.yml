@@ -20,12 +20,12 @@ script:
   - chmod +x ./Z00L.sh
   - sudo bash ./gcc-fix.sh
   - sudo bash ./Z00T.sh
-  - sudo bash ./Z00L.sh
+#  - sudo bash ./Z00L.sh
 
-after_success:
-  - export UPLOADTOOL_SUFFIX=Sylvania
-  - export UPLOADTOOL_BODY="Custom Kernel for Z00T Devices"
-  - sudo bash upload.sh $TRAVIS_BUILD_DIR/msm8916/*.zip
+#after_success:
+#  - export UPLOADTOOL_SUFFIX=Sylvania
+#  - export UPLOADTOOL_BODY="Custom Kernel for Z00T Devices"
+#  - sudo bash upload.sh $TRAVIS_BUILD_DIR/msm8916/*.zip
 
 branches:
   except:
