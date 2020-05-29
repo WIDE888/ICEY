@@ -9,7 +9,7 @@ nocol='\033[0m';
 
 # Kernel details;
 KERNEL_NAME="ICEY-S";
-VERSION="1.0";
+VERSION="1.0.1";
 DATE=$(date +"%d-%m-%Y-%I-%M");
 DEVICE="Z00L";
 OUT="msm8916";
@@ -28,7 +28,6 @@ export KBUILD_BUILD_USER="Akanerin";
 export KBUILD_BUILD_HOST="Tamamo-no-Mae";
 STRIP="aarch64-linux-elf/aarch64-linux-elf/bin/aarch64-linux-elf-strip";
 export CCOMPILE=$CROSS_COMPILE;
-#export CROSS_COMPILE="/usr/bin/ccache aarch64-linux-elf-" ;
 export PATH=$PATH:./aarch64-linux-elf/aarch64-linux-elf/bin/ ;
 make Z00L_defconfig;
 make -j$(nproc --all);
