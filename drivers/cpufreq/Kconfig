@@ -106,11 +106,11 @@ config CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
 
-config CPU_FREQ_DEFAULT_GOV_SAKURA_ACTIVE
-	bool "sakura_active"
-	select CPU_FREQ_GOV_SAKURA_ACTIVE
+config CPU_FREQ_DEFAULT_GOV_SAKURACTIVE
+	bool "sakuractive"
+	select CPU_FREQ_GOV_SAKURACTIVE
 	help
-	  Use the CPUFreq governor 'sakura_active' as default.
+	  Use the CPUFreq governor 'sakuractive' as default.
 
 config CPU_FREQ_DEFAULT_GOV_CONSERVATIVE
 	bool "conservative"
@@ -205,10 +205,10 @@ config CPU_FREQ_GOV_BLU_ACTIVE
 
 	  If in doubt, say N.
 
-config CPU_FREQ_GOV_SAKURA_ACTIVE
-	tristate "'sakura_active' cpufreq policy governor"
+config CPU_FREQ_GOV_SAKURACTIVE
+	tristate "'sakuractive' cpufreq policy governor"
 	help
-	  'sakura_active' - This driver adds a dynamic cpufreq policy governor
+	  'sakuractive' - This driver adds a dynamic cpufreq policy governor
 	  designed for latency-sensitive workloads.
 
 	  This governor attempts to reduce the latency of clock
@@ -216,7 +216,7 @@ config CPU_FREQ_GOV_SAKURA_ACTIVE
 	  interactive workloads.
 
 	  To compile this driver as a module, choose M here: the
-	  module will be called cpufreq_sakura_active.
+	  module will be called cpufreq_sakuractive.
 
 	  If in doubt, say N.
 
