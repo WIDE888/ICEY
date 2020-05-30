@@ -376,7 +376,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -std=gnu89 $(call cc-option,-fno-PIE) \
-		   -mcpu=cortex-a53.cortex-a53 -mtune=cortex-a53 -fdiagnostics-color=always -ftree-vectorize -pipe \
+		   -mcpu=cortex-a53+crypto -mtune=cortex-a53+crypto -fdiagnostics-color=always -ftree-vectorize -pipe \
 		   -Wno-maybe-uninitialized -Wno-unused-variable -Wno-unused-function -Wno-unused-label \
 		   -Wno-memset-transposed-args -Wno-bool-compare -Wno-logical-not-parentheses -Wno-discarded-array-qualifiers \
 		   -Wno-unused-const-variable -Wno-array-bounds -Wno-incompatible-pointer-types \
@@ -742,8 +742,8 @@ ifeq ($(CONFIG_STRIP_ASM_SYMS),y)
 LDFLAGS_vmlinux	+= $(call ld-option, -X,)
 endif
 
-LDFLAGS_vmlinux += $(call ld-option, --fix-cortex-a53-843419)
-LDFLAGS_MODULE += $(call ld-option, --fix-cortex-a53-843419)
+LDFLAGS_vmlinux += $(call ld-option, --fix-cortex-a53-843419 --fix-cortex-a53-835769)
+LDFLAGS_MODULE += $(call ld-option, --fix-cortex-a53-843419 --fix-cortex-a53-835769)
 
 # Default kernel image to build when no specific target is given.
 # KBUILD_IMAGE may be overruled on the command line or
