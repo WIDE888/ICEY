@@ -376,7 +376,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -std=gnu89 $(call cc-option,-fno-PIE) \
-		   -mcpu=cortex-a53+crypto -mtune=cortex-a53+crypto -fdiagnostics-color=always -ftree-vectorize -pipe \
+		   -mcpu=cortex-a53+crypto -mtune=cortex-a53+crypto -march=armv8-a+crypto -fdiagnostics-color=always -ftree-vectorize -pipe \
 		   -Wno-maybe-uninitialized -Wno-unused-variable -Wno-unused-function -Wno-unused-label \
 		   -Wno-memset-transposed-args -Wno-bool-compare -Wno-logical-not-parentheses -Wno-discarded-array-qualifiers \
 		   -Wno-unused-const-variable -Wno-array-bounds -Wno-incompatible-pointer-types \
