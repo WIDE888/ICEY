@@ -20,7 +20,7 @@ ANYKERNEL_DIR=$TRAVIS_BUILD_DIR/AnyKernel3;
 KERNEL_IMG=$TRAVIS_BUILD_DIR/arch/arm64/boot/Image.gz-dtb;
 UPLOAD_DIR=$TRAVIS_BUILD_DIR/$OUT;
 
-git clone https://github.com/AkagiShiroe/gcc-prebuilt-elf-toolchains.git -b master --single-branch --depth=1 -4 aarch64-linux-elf -j$(nproc --all);
+git clone https://github.com/milouk/gcc-prebuilt-elf-toolchains.git -b master --single-branch --depth=1 -4 aarch64-linux-elf -j$(nproc --all);
 export CROSS_COMPILE="/usr/bin/ccache ./aarch64-linux-elf/aarch64-linux-elf/bin/aarch64-linux-elf-" ;
 export ARCH=arm64;
 export SUBARCH=arm;
